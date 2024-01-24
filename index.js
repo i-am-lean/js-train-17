@@ -8,8 +8,11 @@
  */
 function replaceText(word, replacement, text) {
   // Створення регулярного виразу для пошуку слова з флагом 'g' (глобальний пошук).
+  const regex = new RegExp(word, "g");
   // Використання методу `replace` регулярного виразу для заміни слова на фразу у тексті.
   // Повернення заміненого тексту.
+  return text.replace(regex, replacement);
+  
 }
 
 // Перевірка
@@ -33,8 +36,10 @@ console.log(
  */
 function checkWord(word, text) {
   // Створення регулярного виразу для пошуку слова з флагом 'i' (регістронезалежний пошук).
+  const regex = new RegExp(word, "i");
   // Використання методу `test` регулярного виразу для перевірки наявності слова у тексті.
   // Повернення результату перевірки.
+  return regex.test(text);
 }
 
 // Перевірка
@@ -51,9 +56,13 @@ console.log(checkWord("example", "This is an example sentence."));
  */
 function extractTextInParentheses(str) {
   // Створення регулярного виразу з використанням зворотніх посилань для пошуку тексту в круглих дужках /\((.*?)\)/g.
+  const regexp = /\((.*?)\)/g;
   // Використання методу `matchAll` для отримання всіх збігів регулярного виразу.
+  const matches = str.matchAll(regexp);
   // Створення масиву зі знайденими текстами.
+  return extractText = matches.exec(matches);
   // Повернення масиву вилучених текстів.
+  // return str.exec(extractText);
 }
 
 // Перевірка
